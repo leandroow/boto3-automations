@@ -8,7 +8,7 @@ region_source = 'sa-east-1'
 region_dest   = 'us-east-1'
 account_dev   = 'ACCOUNT'
 account_prd   = 'ACCOUNT'
-image_name    = 'VDAlfrescoCanais'
+image_name    = 'IMAGENAME'
 Private_subnet_1A = 'SUBNET'
 access_key    = 'accesskey'
 secret_key    = 'secretkey'
@@ -71,12 +71,12 @@ read_id_security_group = client.describe_instances(
         instance_id,
     ],
 )
-ler_sg_id = read_id_security_group["Reservations"][0]["Instances"][0]["SecurityGroups"][0]["GroupId"]
+read_sg_id = read_id_security_group["Reservations"][0]["Instances"][0]["SecurityGroups"][0]["GroupId"]
 
 #Get original SG Rules
 read_security_group = client.describe_security_groups(
      GroupIds=[
-        ler_sg_id,
+        read_sg_id,
     ],
 )
 #Filter inbound rules
