@@ -90,7 +90,7 @@ for rule in read_ingress:
 create_security_group = client_dev.create_security_group(
     Description=image_name,
     GroupName=image_name,
-    VpcId='vpc-05a52c04f02899e3a',
+    VpcId='<ID VPC',
 )
 #Add rules to SG
 add_ingress = client_dev.authorize_security_group_ingress(
